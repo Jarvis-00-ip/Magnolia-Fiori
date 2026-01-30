@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Resina & DIY - Magnolia Fiori</title>
+    <meta name="description" content="Scopri le nostre creazioni in resina e partecipa ai nostri workshop floreali.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .lab-hero {
+            background-image: url('assets/images/resin_workshop.png');
+            /* Will be generated */
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lab-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(13, 44, 84, 0.5);
+        }
+
+        .lab-hero h2 {
+            font-size: 3.5rem;
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            text-align: center;
+        }
+
+        .workshop-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .workshop-img {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .workshop-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .workshop-card:hover .workshop-img img {
+            transform: scale(1.05);
+        }
+
+        .workshop-info {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .workshop-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-midnight);
+        }
+
+        .workshop-info p {
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+        }
+
+        .price-tag {
+            font-weight: bold;
+            color: var(--color-sage);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo"><a href="index.html">
+                    <h1>Magnolia Fiori</h1>
+                </a></div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalogo.html">I Nostri Fiori</a></li>
+                    <li><a href="matrimoni.html">Matrimoni</a></li>
+                    <li><a href="laboratorio.html" class="active">Resina & DIY</a></li>
+                    <li><a href="galleria.html">Galleria</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <div class="lab-hero">
+        <div class="fade-in">
+            <h2>Laboratorio Creativo</h2>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="intro text-center fade-in" style="max-width: 800px; margin: 0 auto 4rem auto;">
+                <span class="sage-circle-icon"></span>
+                <h3>L'Arte di Conservare la Bellezza</h3>
+                <p>Non creiamo solo composizioni effimere. Nel nostro laboratorio, trasformiamo i fiori in ricordi
+                    eterni attraverso la resina e insegniamo l'arte floreale nei nostri workshop.</p>
+            </div>
+
+            <div class="category-grid">
+                <!-- Resin Art -->
+                <div class="workshop-card fade-in">
+                    <div class="workshop-img">
+                        <img src="assets/images/resin.png" alt="Gioielli in Resina"> <!-- Placeholder/Reused -->
+                    </div>
+                    <div class="workshop-info">
+                        <h3>Creazioni in Resina</h3>
+                        <p>Gioielli, fermacarte e quadri realizzati inglobando fiori veri nella resina epossidica. Un
+                            modo unico per conservare il bouquet del tuo matrimonio o un fiore speciale.</p>
+                        <a href="contatti.html" class="btn">Richiedi Info</a>
+                    </div>
+                </div>
+
+                <!-- DIY Course -->
+                <div class="workshop-card fade-in" style="transition-delay: 0.2s;">
+                    <div class="workshop-img">
+                        <img src="assets/images/diy_course.png" alt="Workshop Floreale"> <!-- Will be generated -->
+                    </div>
+                    <div class="workshop-info">
+                        <h3>Workshop: La Corona d'Autunno</h3>
+                        <p>Impara a intrecciare rami e fiori per creare una splendida ghirlanda autunnale. Materiali e
+                            aperitivo inclusi!</p>
+                        <span class="price-tag">€ 50,00</span>
+                        <a href="contatti.html" class="btn">Prenota Posto</a>
+                    </div>
+                </div>
+
+                <!-- DIY Course 2 -->
+                <div class="workshop-card fade-in" style="transition-delay: 0.4s;">
+                    <div class="workshop-img">
+                        <img src="assets/images/shop.png" alt="Corso Base"> <!-- Reused -->
+                    </div>
+                    <div class="workshop-info">
+                        <h3>Corso Base Composizione</h3>
+                        <p>Le tecniche fondamentali per realizzare il bouquet perfetto. Adatto a principianti che amano
+                            i fiori.</p>
+                        <span class="price-tag">€ 40,00</span>
+                        <a href="contatti.html" class="btn">Prenota Posto</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Magnolia Fiori - P.IVA 12345678901 | <a href="privacy.html">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
