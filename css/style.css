@@ -1,0 +1,134 @@
+:root {
+    /* Color Palette */
+    --color-sage: #A8C69F;
+    --color-midnight: #0D2C54;
+    --color-magnolia-pink: #F4E1E6; /* Approximate soft pink */
+    --color-white: #FFFFFF;
+    --color-off-white: #FAFAFA;
+    --color-text: #333333;
+    
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+
+    /* Spacing */
+    --spacing-container: 1200px;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+}
+
+/* Reset & Base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-off-white);
+    color: var(--color-midnight);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-midnight);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+/* Layout Utilities */
+.container {
+    max-width: var(--spacing-container);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.section {
+    padding: var(--spacing-lg) 0;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: var(--color-sage);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 30px; /* Pillow shape */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover {
+    background-color: var(--color-midnight);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--color-midnight);
+    color: var(--color-midnight);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-midnight);
+    color: var(--color-white);
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Sage Circle Motif */
+.sage-circle {
+    position: relative;
+    z-index: 1;
+}
+
+.sage-circle::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: var(--color-sage);
+    border-radius: 50%;
+    top: -30px;
+    left: -30px;
+    z-index: -1;
+    opacity: 0.2;
+    transition: transform 0.5s ease;
+}
+
+.sage-circle:hover::before {
+    transform: scale(1.1);
+}
