@@ -10,11 +10,26 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-contact">
+                <span><i class="fas fa-map-marker-alt"></i> Largo S. Francesco da Paola, 27r, Genova</span>
+                <span><i class="fas fa-phone"></i> 351 350 3464</span>
+            </div>
+            <div class="top-bar-socials">
+                <a href="https://www.instagram.com/magnolia_fiorieco?igsh=YjJidnk3NGVuODh0" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/MagnoliaFioriandc?rdid=bPSgxnzypCeqGjP2&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18PchaWL8k%2F#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </div>
 
     <!-- Header -->
     <header class="main-header">
@@ -105,7 +120,45 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Magnolia Fiori - P.IVA 12345678901 | <a href="privacy.html">Privacy Policy</a></p>
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Magnolia Fiori</h4>
+                    <p>Dove l’arte fiorisce. Creazioni uniche per ogni occasione, dal bouquet regalo alle grandi scenografie.</p>
+                    <div class="social-icons-footer">
+                        <a href="https://www.instagram.com/magnolia_fiorieco?igsh=YjJidnk3NGVuODh0" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/MagnoliaFioriandc?rdid=bPSgxnzypCeqGjP2&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F18PchaWL8k%2F#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contatti</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Largo S. Francesco da Paola, 27r<br>16127 Genova GE</li>
+                        <li><i class="fas fa-phone"></i> 351 350 3464</li>
+                        <li><i class="fas fa-envelope"></i> info@magnoliafiori.it</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Orari</h4>
+                    <ul>
+                        <li><i class="far fa-clock"></i> Lun, Mer, Gio, Ven:<br>09:00–12:00, 16:00–19:00</li>
+                        <li><i class="far fa-clock"></i> Martedì: 09:00–19:00</li>
+                        <li><i class="far fa-clock"></i> Sabato: 09:00–12:00</li>
+                        <li><i class="far fa-clock"></i> Domenica: Chiuso</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Link Utili</h4>
+                    <ul>
+                        <li><a href="catalogo.html">Catalogo</a></li>
+                        <li><a href="matrimoni.html">Matrimoni</a></li>
+                        <li><a href="laboratorio.html">Workshop</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Magnolia Fiori - P.IVA 12345678901</p>
+            </div>
         </div>
     </footer>
 
@@ -124,15 +177,11 @@
         .hero-content { position: relative; z-index: 2; }
         .hero h2 { font-size: 3.5rem; margin-bottom: 1rem; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
         .hero p { font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
-
         .category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; text-align: center; }
         .category-card .img-wrapper { height: 300px; overflow: hidden; margin-bottom: 1.5rem; border-radius: 8px; }
         .category-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
         .category-card:hover img { transform: scale(1.05); }
         .btn-text { color: var(--color-midnight); font-weight: bold; text-decoration: underline; }
-
-        footer { background: var(--color-midnight); color: #fff; padding: 2rem 0; text-align: center; margin-top: 4rem; }
-        footer a { color: var(--color-sage); }
     </style>
 </body>
 </html>

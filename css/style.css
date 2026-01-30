@@ -2,11 +2,12 @@
     /* Color Palette */
     --color-sage: #A8C69F;
     --color-midnight: #0D2C54;
-    --color-magnolia-pink: #F4E1E6; /* Approximate soft pink */
+    --color-magnolia-pink: #F4E1E6;
+    /* Approximate soft pink */
     --color-white: #FFFFFF;
     --color-off-white: #FAFAFA;
     --color-text: #333333;
-    
+
     /* Typography */
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Lato', sans-serif;
@@ -29,10 +30,16 @@ body {
     background-color: var(--color-off-white);
     color: var(--color-midnight);
     line-height: 1.6;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
     color: var(--color-midnight);
     margin-bottom: 1rem;
@@ -75,7 +82,8 @@ img {
     font-family: var(--font-body);
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-radius: 30px; /* Pillow shape */
+    border-radius: 30px;
+    /* Pillow shape */
     transition: transform 0.3s ease, background-color 0.3s ease;
     cursor: pointer;
     border: none;
@@ -97,16 +105,32 @@ img {
     color: var(--color-white);
 }
 
-/* Animations */
+/* Animations (Apple-Style) */
 .fade-in {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    transform: translateY(30px) scale(0.95);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+        filter 1.2s ease-out;
+    filter: blur(5px);
+    will-change: opacity, transform, filter;
 }
 
 .fade-in.visible {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+}
+
+.scale-reveal {
+    opacity: 0;
+    transform: scale(1.1);
+    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.5s ease;
+}
+
+.scale-reveal.visible {
+    opacity: 1;
+    transform: scale(1);
 }
 
 /* Sage Circle Motif */
@@ -131,4 +155,223 @@ img {
 
 .sage-circle:hover::before {
     transform: scale(1.1);
+}
+
+/* Top Bar */
+.top-bar {
+    background-color: var(--color-sage);
+    color: var(--color-white);
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar-contact {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.top-bar-contact span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.top-bar-socials a {
+    color: var(--color-white);
+    margin-left: 1rem;
+    font-size: 1.1rem;
+}
+
+.top-bar-socials a:hover {
+    opacity: 0.8;
+}
+
+/* Enhanced Footer */
+footer {
+    background: var(--color-midnight);
+    color: #fff;
+    padding: 4rem 0 2rem 0;
+    margin-top: 4rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.footer-col h4 {
+    color: var(--color-sage);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: start;
+    gap: 10px;
+}
+
+.footer-col a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col a:hover {
+    color: var(--color-sage);
+}
+
+.social-icons-footer {
+    margin-top: 1rem;
+}
+
+.social-icons-footer a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    margin-right: 0.5rem;
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+.social-icons-footer a:hover {
+    background: var(--color-sage);
+    color: var(--color-midnight);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 768px) {
+
+    /* Top Bar Mobile */
+    .top-bar .container {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .top-bar-contact {
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    /* Base Typography Updates */
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Header & Navigation */
+    .header-container {
+        padding: 1rem 1.5rem;
+        position: relative;
+    }
+
+    .logo {
+        margin-bottom: 0;
+        /* Align with toggle */
+        z-index: 1002;
+    }
+
+    .nav-toggle {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 21px;
+        z-index: 1002;
+        cursor: pointer;
+    }
+
+    .nav-toggle span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--color-midnight);
+        transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+
+    /* Hamburger Animation */
+    .nav-toggle.open span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .nav-toggle.open span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .nav-toggle.open span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Fullscreen Mobile Menu */
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 100%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.98);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        z-index: 1000;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 2.5rem;
+    }
+
+    .nav-menu a {
+        font-size: 1.5rem;
+        font-weight: 300;
+        color: var(--color-midnight);
+        display: block;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .nav-menu.active a {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: 0.2s;
+    }
 }
