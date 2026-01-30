@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrimoni & Eventi - Magnolia Fiori</title>
+    <meta name="description" content="Allestimenti floreali da sogno per il tuo matrimonio in Liguria.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .wedding-hero {
+            background-image: url('assets/images/hero.png');
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wedding-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Lighter overlay for weddings */
+        .wedding-hero h2 {
+            font-size: 4rem;
+            z-index: 2;
+            color: var(--color-midnight);
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+        }
+
+        .service-row {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            gap: 4rem;
+        }
+
+        .service-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .service-text {
+            flex: 1;
+        }
+
+        .service-img {
+            flex: 1;
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-img::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .service-row {
+                flex-direction: column !important;
+            }
+
+            .service-img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container header-container">
+            <div class="logo"><a href="index.html">
+                    <h1>Magnolia Fiori</h1>
+                </a></div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalogo.html">I Nostri Fiori</a></li>
+                    <li><a href="matrimoni.html" class="active">Matrimoni</a></li>
+                    <li><a href="laboratorio.html">Resina & DIY</a></li>
+                    <li><a href="galleria.html">Galleria</a></li>
+                    <li><a href="contatti.html">Contatti</a></li>
+                </ul>
+            </nav>
+            <div class="nav-toggle"><span></span><span></span><span></span></div>
+        </div>
+    </header>
+
+    <div class="wedding-hero">
+        <div class="fade-in">
+            <h2>Il Tuo Giorno Perfetto</h2>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+
+            <div class="service-row fade-in">
+                <div class="service-text">
+                    <h3>Scenografie Floreali</h3>
+                    <p>Dalla cerimonia al ricevimento, curiamo ogni dettaglio per creare un'atmosfera magica che
+                        rispecchi la vostra storia d'amore. Archi fioriti, centrotavola eleganti e installazioni
+                        sospese.</p>
+                </div>
+                <div class="service-img sage-circle">
+                    <img src="assets/images/hero.png" alt="Scenografia Matrimonio">
+                </div>
+            </div>
+
+            <div class="service-row fade-in">
+                <div class="service-text">
+                    <h3>Il Bouquet della Sposa</h3>
+                    <p>Un accessorio unico, pensato esclusivamente per te. Scegliamo i fiori più pregiati per completare
+                        il tuo abito con un tocco di naturale eleganza.</p>
+                </div>
+                <div class="service-img sage-circle">
+                    <img src="assets/images/wedding_detail_1.png" alt="Bouquet Sposa">
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="contatti.html" class="btn">Richiedi un Preventivo</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Magnolia Fiori - P.IVA 12345678901 | <a href="privacy.html">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
