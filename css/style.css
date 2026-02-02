@@ -208,6 +208,10 @@ img {
     align-items: center;
 }
 
+.nav-toggle {
+    display: none;
+}
+
 .nav-menu ul {
     display: flex;
     gap: 2rem;
